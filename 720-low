@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while getopts f flag
+while getopts ":f:" flag;
 do
   case "${flag}" in
     f) fmt=${OPTARG};;
@@ -9,7 +9,7 @@ done
 
 if [ $fmt == "" ]
 then
-  echo "You seem to have not set an output format please us -e with a type eg (mkv, mp4)"
+  echo "You seem to have not set an output format please use -f with a type eg (mkv, mp4)"
 fi
 
 for file in $@;
